@@ -7,9 +7,10 @@ function UserCard(props) {
     console.log(Object.entries(rest));
 
     return (
-    <div className="bg-white p-6 rounded-lg shadow hover:shadow-md transition-shadow">
-      <h2 className="text-xl font-semibold text-gray-800 mb-2">{name}</h2>
-      <p className="text-gray-600">
+    <div className="flex flex-col items-center text-center bg-white p-6 rounded-lg shadow border-2 border-transparent
+          hover:shadow-md transition-all duration-300 transform hover:scale-105 hover:border-black hover:bg-pink-100">
+      <h2 className="text-xl font-semibold text-gray-800 mb-2 uppercase">{name}</h2>
+      <p className="text-gray-600 mb-6">
         <span className="font-medium">Email:</span> {email}
       </p>
       <p className="text-gray-600">
@@ -25,7 +26,8 @@ function UserCard(props) {
         ))}
 
       <button 
-        className={`${clicked ? "bg-special-green" : "bg-gray-01"} text-white p-2 rounded-md`}
+        className={`${clicked ? "bg-special-red" : "bg-gray-01"} text-white p-2 rounded-md w-full transition-colors duration-300
+        hover:bg-gray-400`}
         onClick={() => setClicked(true)}
     >
         {clicked ? "Tombol sudah diklik" : "Silahkan Klik"}
