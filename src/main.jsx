@@ -4,6 +4,7 @@ import App from "./App.jsx";
 import "./index.css";
 import Parent from "./latihan/Parent.jsx";
 import { CounterContextProvider } from "./context/counterContext.jsx";
+import Form from "./latihan/Form.jsx";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
