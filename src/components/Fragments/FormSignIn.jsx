@@ -2,6 +2,23 @@ import React from 'react'
 import LabeledInput from "../Elements/LabeledInput";
 import Button from "../Elements/Button";
 import CheckBox from "../Elements/CheckBox";
+import { Formik, Form, Field, ErrorMessage } from "formik";
+import * as Yup from "yup";
+
+const SignInSchema = Yup.object().shape({
+  email: Yup.string().email("Email tidak valid").required("Email wajib diisi"),
+  password: Yup.string().required("Password wajib diisi"),
+});
+
+	const [snackbar, setSnackbar] = useState({
+    open: false,
+    message: "",
+    severity: "success",
+  }); 
+  
+  const handleCloseSnackbar = () => {
+    setSnackbar((prev) => ({ ...prev, open: false }));
+  };
 
 function FormSignIn() {
   return (
