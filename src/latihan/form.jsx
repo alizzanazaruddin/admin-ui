@@ -25,6 +25,22 @@ const Form = () => {
     console.log(password);
     console.log("-");
 
+    const fetchGoals = async () => {
+    try {
+    const token = localStorage.getItem("token");
+
+    const response = await axios.get("https://jwt-auth-eight-neon.vercel.app/goals", {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    });
+
+    console.log(response.data);
+  } catch (error) {
+    console.error(error);
+  }
+};
+
   return (
     <div className="p-4">
       <form>
