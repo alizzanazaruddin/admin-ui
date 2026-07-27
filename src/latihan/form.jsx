@@ -1,9 +1,25 @@
 import React from "react";
 import React, { useState } from "react";
+import axios from "axios";
 
 const Form = () => {
     const [email, setEmail] = useState("cobaemail");
     const [password, setPassword] = useState("cobapassword");
+
+    const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    try {
+        const response = await axios.post(
+        "https://jwt-auth-eight-neon.vercel.app/login",
+        { email, password },
+        );
+
+    console.log(response.data);
+  } catch (error) {
+    console.error(error);
+  }
+};
 
     console.log(email);
     console.log(password);
