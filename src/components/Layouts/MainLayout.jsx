@@ -8,15 +8,15 @@ import { NavLink } from "react-router-dom";
 function MainLayout(props) {
   const { children } = props;
 
-  const menu = [
-    { id: 1, name: "Overview", icon: <Icon.Overview />, link: "/" },
-    { id: 2, name: "Balances", icon: <Icon.Balance />, link: "/balance" },
-    { id: 3, name: "Transaction", icon: <Icon.Transaction />, link: "/transaction", },
-    { id: 4, name: "Bills", icon: <Icon.Bill />, link: "/bill" },
-    { id: 5, name: "Expenses", icon: <Icon.Expense />, link: "/expense" },
-    { id: 6, name: "Goals", icon: <Icon.Goal />, link: "/goal" },
-    { id: 7, name: "Settings", icon: <Icon.Setting />, link: "/setting" },
-  ];
+ const themes = [
+  { name: "theme-green", bgcolor: "bg-[#299D91]", color: "#299D91" },
+  { name: "theme-blue", bgcolor: "bg-[#1E90FF]", color: "#1E90FF" },
+  { name: "theme-purple", bgcolor: "bg-[#6A5ACD]", color: "#6A5ACD" },
+  { name: "theme-pink", bgcolor: "bg-[#DB7093]", color: "#DB7093" },
+  { name: "theme-brown", bgcolor: "bg-[#8B4513]", color: "#8B4513" },
+];
+
+const [theme, setTheme] = useState(themes[0]);
   
   return (
     <>
